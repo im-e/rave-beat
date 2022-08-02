@@ -10,6 +10,12 @@
 [Ll]ogs/
 [Mm]emoryCaptures/
 
+# Music data, I do not have licenses, so the files have to be removed.
+*.mp3
+
+
+
+
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 

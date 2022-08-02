@@ -40,8 +40,9 @@ public class ChartRecordButton : MonoBehaviour
             case Grade.A: grade = "A"; backgroundGrade.color = hardClearedBackground.color; break;
             case Grade.B: grade = "B"; backgroundGrade.color = clearedBackground.color; break;
             case Grade.C: grade = "C"; backgroundGrade.color = clearedBackground.color; break;
-            case Grade.D: grade = "C"; backgroundGrade.color = failedBackground.color; break;
+            case Grade.D: grade = "D"; backgroundGrade.color = failedBackground.color; break;
             case Grade.U: grade = "U"; backgroundGrade.color = failedBackground.color; break;
+            case Grade.None: grade = " "; break;
         }
         chartGradeText.text = grade;
 
@@ -51,6 +52,7 @@ public class ChartRecordButton : MonoBehaviour
             case Cleared.Clear: clear = "C"; backgroundClear.color = clearedBackground.color; break;
             case Cleared.Fail: clear = "X"; backgroundClear.color = failedBackground.color; break;
             case Cleared.HardClear: clear = "HC"; backgroundClear.color = hardClearedBackground.color; break;
+            case Cleared.None: clear = " "; break;
         }
         chartClearText.text = clear;
 
@@ -62,8 +64,8 @@ public class ChartRecordButton : MonoBehaviour
             case 2: backgroundRank.color = hardClearedBackground.color; break;
             case 3: backgroundRank.color = clearedBackground.color; break;
         }
+        
         chartRankText.text = rank.ToString("F0");
-
         chartHitText.text = data.hitCount.ToString("F0");
         chartNearText.text = data.nearCount.ToString("F0"); 
         chartMissText.text = data.missCount.ToString("F0");

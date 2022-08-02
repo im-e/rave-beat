@@ -118,8 +118,12 @@ public class MainMenu : MonoBehaviour
                 button.transform.SetParent(chartButtonsContainer.transform);
                 button.transform.localScale = new Vector3(1f, 1f, 1f);
                 button.GetComponent<ChartButton>().chart = chart;
-                button.GetComponent<Button>().onClick.AddListener(() => LoadChart());
-                if(x == 0)GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(button); chartFirstSelected = button;
+                button.GetComponent<Button>().onClick.AddListener(() => LoadChart()); 
+                if (x == 0) 
+                {
+                    GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(button); 
+                    chartFirstSelected = button;
+                }
                 if(x == 5)chartLastOnScreen = button;
                 x++;
             }
@@ -210,7 +214,8 @@ public class MainMenu : MonoBehaviour
                     case Grade.B: grade = "B"; backgroundGrade.color = clearedBackground.color; break;
                     case Grade.C: grade = "C"; backgroundGrade.color = clearedBackground.color; break;
                     case Grade.D: grade = "C"; backgroundGrade.color = failedBackground.color; break;
-                    case Grade.U: grade = "U"; backgroundGrade.color = failedBackground.color; break;
+                    case Grade.U: grade = "U";  backgroundGrade.color = failedBackground.color; break;
+                    case Grade.None: grade = " ";  break;
                 }
                 chartGradeText.text = grade;
 
@@ -220,6 +225,7 @@ public class MainMenu : MonoBehaviour
                     case Cleared.Clear: clear = "C"; backgroundClear.color = clearedBackground.color; break;
                     case Cleared.Fail: clear = "X"; backgroundClear.color = failedBackground.color; break;
                     case Cleared.HardClear: clear = "HC"; backgroundClear.color = hardClearedBackground.color; break;
+                    case Cleared.None: clear = " "; break;
                 }
                 chartClearText.text = clear;
                 chartImage.sprite = b.chart.songImage;

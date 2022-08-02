@@ -44,6 +44,7 @@ public class ChartButton : MonoBehaviour
             case Grade.C: grade = "C"; backgroundGrade.color = clearedBackground.color; break;
             case Grade.D: grade = "D"; backgroundGrade.color = failedBackground.color; break;
             case Grade.U: grade = "U"; backgroundGrade.color = failedBackground.color; break;
+            case Grade.None: grade = " "; break;
         }
         chartButtonGrade.text = grade;
 

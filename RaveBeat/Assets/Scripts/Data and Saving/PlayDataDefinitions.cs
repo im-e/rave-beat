@@ -7,12 +7,12 @@ public enum Grade
 {
     S, AAA, AA,
     A, B, C,
-    D, U
+    D, U, None 
 }
 [System.Serializable]
 public enum Cleared
 {
-    Fail, Clear, HardClear
+    Fail, Clear, HardClear, None
 }
 
 [System.Serializable]
@@ -29,7 +29,7 @@ public class PlayData
     public int lateCount;
 
     public PlayData(Cleared clear, Grade grd, float scr, int highCombo,
-    int hits, int miss, int nears, int earlys, int lates)
+    int hits, int miss, int nears, int earlies, int lates)
     {
         cleared = clear;
         grade = grd;
@@ -38,7 +38,7 @@ public class PlayData
         hitCount = hits;
         missCount = miss;
         nearCount = nears;
-        earlyCount = earlys;
+        earlyCount = earlies;
         lateCount = lates;
     }
 }
@@ -75,7 +75,7 @@ public class ChartRecordData
 
     public ChartRecordData()
     {
-        playerBest = new PlayData(Cleared.Fail, Grade.U, 0, 0, 0, 0, 0, 0, 0);
+        playerBest = new PlayData(Cleared.None, Grade.None, 0, 0, 0, 0, 0, 0, 0);
         playHistory = new PlayHistory(playerBest);
     }
 

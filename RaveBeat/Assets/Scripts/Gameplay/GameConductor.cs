@@ -39,8 +39,6 @@ public class GameConductor : Conductor
     private NoteType[] noteTypes;
     private NoteDir[] noteDirs;
 
-    private int nextNoteIndex;
-
     private float noteStartZ;
     private float noteEndZ;
     private float noteGroundY;
@@ -73,6 +71,7 @@ public class GameConductor : Conductor
     private bool chartEnded;
     private bool gameEnded;
     private bool audioPaused;
+    private bool hardMode;
 
     public Image chartImage;
     public TMPro.TextMeshProUGUI chartNameText;
@@ -94,6 +93,7 @@ public class GameConductor : Conductor
     public GameObject scoreMenuSelected;
 
     private Queue<Note> notesOnScreen;
+    private int nextNoteIndex;
     private float songCurrentPosition;
     private float songBeatDuration;
     private float songElapsed;
@@ -107,8 +107,6 @@ public class GameConductor : Conductor
     public bool leftYInUse;
     public bool rightXInUse;
     public bool rightYInUse;
-
-    private bool hardMode;
 
 
     void Start()
@@ -368,14 +366,15 @@ public class GameConductor : Conductor
                 Debug.Log("You failed!");
             }
 
-            grade = Grade.U;
+            grade = Grade.None;
             if (playerScore == maxScore) grade = Grade.S;
             else if (playerScore >= (maxScore * 0.99)) grade = Grade.AAA; 
             else if (playerScore >= (maxScore * 0.95)) grade = Grade.AA; 
             else if (playerScore >= (maxScore * 0.9)) grade = Grade.A; 
             else if (playerScore >= (maxScore * 0.85)) grade = Grade.B; 
             else if (playerScore >= (maxScore * 0.8)) grade = Grade.C; 
-            else if (playerScore >= (maxScore * 0.7)) grade = Grade.D; 
+            else if (playerScore >= (maxScore * 0.7)) grade = Grade.D;
+            else if (playerScore < (maxScore * 0.7)) grade = Grade.U;
 
             score = playerScore;
             highCombo = playerComboMax;
