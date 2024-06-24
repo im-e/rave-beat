@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 860234bac6f42d6499a2bc9f254061f1, type: 3}
+  m_Name: Test10
+  m_EditorClassIdentifier: 
+  songID: 11
+  songTitle: Test
+  songArtist: Test
+  songImage: {fileID: 21300000, guid: a1978ae1a6c10ce4093c91b872757677, type: 3}
+  rating: 10
+  file: {fileID: 8300000, guid: 4a32fea42afa7184f8540fba565bcbb7, type: 3}
+  bpm: 120
+  songOffset: 0.5
+  notes:
+  - 3.4
+  - 5.4
+  - 7.4
+  noteTypes: 000000000000000000000000
+  noteDirs: 000000000000000000000000
